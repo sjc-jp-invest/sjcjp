@@ -1,33 +1,281 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CÔNG TY ĐẦU TƯ QUỐC TẾ KIM LOẠI QUÝ SJC·JP</title>
 
-    <style>
-        body {
-            margin: 0;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        video {
-            width: 100%;
-            height: auto;
-        }
-    </style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #05060b;
+      color: #f8f8f8;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #f6c453;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      color: #f6c453;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #b3b3c6;
+      margin-bottom: 28px;
+    }
+
+    .highlight {
+      color: #ffde7a;
+    }
+
+    .main-section {
+      background: radial-gradient(circle at top, #202437, #05060b);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .video-wrapper {
+      flex: 1 1 320px;
+      min-width: 280px;
+    }
+
+    .video-card {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .video-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-wrapper {
+      flex: 1 1 320px;
+      min-width: 280px;
+      padding-left: 4px;
+    }
+
+    .profile-badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #f6c453;
+      border-radius: 999px;
+      border: 1px solid rgba(246,196,83,0.6);
+      padding: 4px 12px;
+      margin-bottom: 10px;
+    }
+
+    .profile-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .profile-text {
+      font-size: 14px;
+      color: #d5d5e0;
+      margin-bottom: 8px;
+    }
+
+    .profile-text + .profile-text { margin-top: 4px; }
+
+    .tag-line {
+      font-size: 13px;
+      color: #a0a0c0;
+      margin-top: 8px;
+    }
+
+    .tag-line span {
+      color: #f6c453;
+    }
+
+    .content-section {
+      margin-top: 22px;
+      background: rgba(7,9,20,0.95);
+      border-radius: 18px;
+      padding: 20px 22px 24px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .content-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #f6c453;
+      margin-bottom: 10px;
+    }
+
+    .content-block {
+      margin-bottom: 18px;
+    }
+
+    .content-block-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .content-list {
+      margin-left: 18px;
+      font-size: 14px;
+      color: #d5d5e0;
+    }
+
+    .content-list li {
+      margin: 2px 0;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #8c8ca6;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 20px;
+      }
+
+      .main-section {
+        padding: 16px;
+      }
+
+      .content-section {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="page-wrapper">
+    <!-- 顶部标题 -->
+    <h1 class="page-title">
+      CÔNG TY ĐẦU TƯ QUỐC TẾ KIM LOẠI QUÝ <span class="highlight">SJC·JP</span>
+    </h1>
+    <div class="page-subtitle">
+      <span class="highlight">Vàng · Kim loại quý · Đầu tư quốc tế · Chiến lược ASEAN</span>
+    </div>
 
-    <video controls autoplay>
-        <source src=https://files.catbox.moe/f722ty.mp4 type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- 第一部分：左视频 + 右简介 -->
+    <section class="main-section">
+      <!-- 视频 -->
+      <div class="video-wrapper">
+        <div class="video-card">
+          <!-- 这里是你的视频地址，如果以后换视频，只要改 src 这一行 -->
+          <video
+            src="https://files.catbox.moe/f722ty.mp4"
+            controls
+            autoplay
+            muted
+            playsinline
+          ></video>
+        </div>
+      </div>
 
+      <!-- 公司简介 -->
+      <div class="profile-wrapper">
+        <div class="profile-badge">COMPANY PROFILE</div>
+        <h2 class="profile-title">
+          Tập trung vào khai thác, tinh luyện và đầu tư quốc tế kim loại quý
+        </h2>
+
+        <p class="profile-text">
+          SJC·JP là nền tảng hợp tác giữa Việt Nam và Nhật Bản trong lĩnh vực vàng và kim loại quý,
+          phát triển chuỗi giá trị từ khai thác mỏ, tinh luyện tiêu chuẩn cao đến thương hiệu vàng đầu tư cao cấp.
+        </p>
+        <p class="profile-text">
+          Thông qua việc kết hợp công nghệ tinh luyện Nhật Bản với lợi thế tài nguyên của Việt Nam,
+          SJC·JP hướng tới xây dựng trung tâm kim loại quý mang tầm khu vực ASEAN.
+        </p>
+
+        <p class="tag-line">
+          Định hướng chiến lược: <span>Khai thác · Tinh luyện · Thương hiệu · Tài chính vàng</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- 第二部分：业务板块介绍 -->
+    <section class="content-section">
+      <h2 class="content-title">Lĩnh vực kinh doanh chính</h2>
+
+      <div class="content-block">
+        <div class="content-block-title">
+          1. Khai thác và đầu tư kim loại quý
+        </div>
+        <ul class="content-list">
+          <li>Thăm dò, đầu tư và hợp tác phát triển các mỏ vàng tiềm năng</li>
+          <li>Liên doanh khai thác tại các khu vực chiến lược trong và ngoài nước</li>
+          <li>Xây dựng trữ lượng và hệ thống dự trữ chiến lược kim loại quý</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <div class="content-block-title">
+          2. Tinh luyện kim loại quý độ tinh khiết cao (công nghệ Nhật Bản)
+        </div>
+        <ul class="content-list">
+          <li>Ứng dụng công nghệ tinh luyện siêu tinh khiết tiêu chuẩn Nhật Bản</li>
+          <li>Cung cấp nguyên liệu vàng, bạc, bạch kim cho các ngành công nghiệp công nghệ cao</li>
+          <li>Phát triển chuỗi cung ứng kim loại quý chất lượng cao cho khu vực ASEAN</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <div class="content-block-title">
+          3. Thương hiệu vàng đầu tư cao cấp SJC·JP
+        </div>
+        <ul class="content-list">
+          <li>Phát triển sản phẩm vàng miếng, vàng đầu tư mang thương hiệu SJC·JP</li>
+          <li>Kết hợp tiêu chuẩn quản lý Nhật Bản với hệ thống phân phối tại Việt Nam</li>
+          <li>Xây dựng hình ảnh thương hiệu vàng đầu tư an toàn, minh bạch, quốc tế hóa</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      © SJC·JP – Nền tảng hợp tác vàng và kim loại quý giữa Việt Nam &amp; Nhật Bản · Chiến lược ASEAN
+    </div>
+  </div>
 </body>
 </html>
