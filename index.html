@@ -3,128 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CÔNG TY ĐẦU TƯ QUỐC TẾ KIM LOẠI QUÝ SJC·JP</title>
+    <title>Công ty Đầu tư Quốc tế Kim loại Quý SJC·JP</title>
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             background: #050711;
-            color: #ffffff;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #ffd86b;
+            text-decoration: none;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 0 16px 40px;
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hero-video {
+            background: radial-gradient(circle at top, #27293f, #050711 60%);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+        }
+
+        .hero-video video {
+            width: 100%;
+            display: block;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #ffd86b;
+            margin-bottom: 12px;
+        }
+
+        .hero-title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(90deg, #ffd86b, #ff9f6b);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .hero-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .hero-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .hero-list li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            top: 0;
+            color: #ffd86b;
+        }
+
+        .tag-line {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 12px;
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 16px 80px;
-        }
-
-        .header-title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .sub-title {
-            text-align: center;
-            color: #e5c26b;
-            margin-bottom: 30px;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-top: 56.25%; /* 16:9 */
-            background: #000;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(0, 0, 0, .8);
-        }
-
-        .video-wrapper video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
+            margin: 0 auto 60px;
+            padding: 0 16px 40px;
         }
 
         .section {
-            margin-top: 40px;
-            background: rgba(17, 17, 22, 0.95);
-            border-radius: 16px;
-            padding: 24px 20px;
-            border: 1px solid rgba(255, 215, 128, 0.25);
+            background: rgba(16, 18, 40, 0.96);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 24px 20px 26px;
+            margin-top: 20px;
         }
 
         .section-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            color: #f5d06b;
             margin-bottom: 12px;
+            color: #ffd86b;
         }
 
-        .section h3 {
-            margin-top: 16px;
-            color: #ffd66a;
+        .section-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
         }
 
-        ul {
-            padding-left: 20px;
-            line-height: 1.7;
+        .section ul {
+            margin-left: 18px;
+            margin-top: 6px;
+            margin-bottom: 6px;
         }
 
-        p {
-            line-height: 1.7;
+        .section li {
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        @media (max-width: 800px) {
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-tag {
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 6px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.55;
+            padding-bottom: 30px;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1 class="header-title">CÔNG TY ĐẦU TƯ QUỐC TẾ KIM LOẠI QUÝ SJC·JP</h1>
-    <p class="sub-title">Vàng · Kim loại quý · Đầu tư quốc tế · Chiến lược ASEAN</p>
 
-    <!-- 视频区域 -->
-    <div class="video-wrapper">
-        <video controls autoplay muted>
-            <source src="https://files.catbox.moe/f722ty.mp4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ video.
-        </video>
-    </div>
+    <!-- Hero: Video + Intro -->
+    <section class="hero">
+        <div class="hero-video">
+            <!-- Thay đường dẫn video bằng link của bạn nếu cần -->
+            <video controls autoplay muted playsinline>
+                <source src="https://files.catbox.moe/f722ty.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </div>
 
-    <!-- 公司简介 -->
-    <div class="section">
-        <div class="section-title">COMPANY PROFILE</div>
-        <p>
-            SJC·JP là nền tảng hợp tác giữa Việt Nam và Nhật Bản, phát triển chuỗi giá trị vàng và kim loại quý từ khai thác,
-            tinh luyện, xây dựng thương hiệu đến dịch vụ tài chính khu vực, hướng tới trở thành trung tâm kim loại quý của khu vực ASEAN và châu Á.
+        <div>
+            <div class="badge">SJC·JP INTERNATIONAL PRECIOUS METALS INVESTMENT</div>
+            <h1 class="hero-title">
+                Công ty Đầu tư Quốc tế Kim loại Quý <span class="hero-highlight">SJC·JP</span>
+            </h1>
+            <p class="hero-subtitle">
+                Liên doanh chiến lược giữa <span class="hero-highlight">SJC – thương hiệu vàng số 1 Việt Nam</span> 
+                và <span class="hero-highlight">TANAKA Precious Metals – tập đoàn kim loại quý trăm năm tuổi của Nhật Bản</span>, 
+                hướng tới xây dựng trung tâm đầu tư kim loại quý hàng đầu khu vực ASEAN.
+            </p>
+
+            <ul class="hero-list">
+                <li>Nâng tầm năng lực tinh luyện &amp; đầu tư kim loại quý của Việt Nam lên chuẩn quốc tế.</li>
+                <li>Tạo lập trung tâm giao dịch &amp; tài chính kim loại quý cho toàn khu vực ASEAN.</li>
+                <li>Đưa Việt Nam bước vào tầng lõi chuỗi cung ứng kim loại quý tại châu Á.</li>
+            </ul>
+
+            <p class="tag-line">
+                <strong>SJC·JP</strong> – Biến lợi thế vàng &amp; kim loại quý của Việt Nam thành sức mạnh đầu tư quốc tế.
+            </p>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <!-- I. Bối cảnh đối tác liên doanh -->
+        <section class="section">
+            <div class="section-tag">I. BỐI CẢNH ĐỐI TÁC LIÊN DOANH</div>
+            <h2 class="section-title">Đối tác Việt Nam &amp; Nhật Bản – Nền tảng vững chắc cho SJC·JP</h2>
+
+            <div class="two-columns">
+                <div>
+                    <p class="section-subtitle"><strong>Phía Việt Nam: Công ty Vàng bạc Đá quý Sài Gòn – SJC (Saigon Jewelry Company)</strong></p>
+                    <ul>
+                        <li>Thương hiệu vàng lớn nhất Việt Nam.</li>
+                        <li>Nhà sản xuất duy nhất thỏi vàng quốc gia “Long Thần” (vàng miếng SJC).</li>
+                        <li>Hoạt động dưới sự quản lý của Ngân hàng Nhà nước Việt Nam, uy tín cao.</li>
+                        <li>Giữ vai trò dẫn dắt trong bán lẻ, chế tác và phân phối vàng tại thị trường nội địa.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="section-subtitle"><strong>Phía Nhật Bản: TANAKA Precious Metals</strong></p>
+                    <ul>
+                        <li>Tập đoàn kim loại quý lớn nhất Nhật Bản, thành lập từ năm 1885.</li>
+                        <li>Doanh nghiệp hàng đầu thế giới về tinh luyện vàng và kim loại thuộc nhóm bạch kim.</li>
+                        <li>Nhà cung cấp kim loại quý cho các tập đoàn như Sony, Toyota, Panasonic…</li>
+                        <li>Một trong những mắt xích cốt lõi của chuỗi cung ứng kim loại quý khu vực châu Á.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- II. Tổng quan công ty liên doanh -->
+        <section class="section">
+            <div class="section-tag">II. TỔNG QUAN CÔNG TY LIÊN DOANH</div>
+            <h2 class="section-title">SJC·JP – Trung tâm đầu tư kim loại quý mới của ASEAN</h2>
+
+            <p class="section-subtitle"><strong>Tên công ty:</strong></p>
+            <ul>
+                <li><strong>Tiếng Việt:</strong> Công ty Đầu tư Quốc tế Kim loại Quý SJC·JP.</li>
+                <li><strong>Tiếng Anh:</strong> SJC·JP International Precious Metals Investment Co., Ltd.</li>
+            </ul>
+
+            <p class="section-subtitle"><strong>Bối cảnh thành lập:</strong></p>
+            <ul>
+                <li>Sự phát triển mạnh của thị trường kim loại quý ASEAN, trong đó Việt Nam trở thành điểm tựa chiến lược.</li>
+                <li>SJC và TANAKA Precious Metals ký kết hợp tác chiến lược, kết hợp:
+                    <ul>
+                        <li>Sức mạnh thương hiệu vàng dẫn đầu tại Việt Nam.</li>
+                        <li>Công nghệ tinh luyện kim loại quý hơn 100 năm của Nhật Bản.</li>
+                    </ul>
+                </li>
+                <li>Mục tiêu: Xây dựng trung tâm đầu tư, tinh luyện và dịch vụ tài chính kim loại quý của khu vực, 
+                    đồng thời đưa ngành kim loại quý Việt Nam lên tầm quốc tế.</li>
+            </ul>
+        </section>
+
+        <!-- III. Lĩnh vực kinh doanh chính -->
+        <section class="section">
+            <div class="section-tag">III. LĨNH VỰC KINH DOANH CHÍNH</div>
+            <h2 class="section-title">Chuỗi giá trị khép kín từ khai thác – tinh luyện – thương hiệu – tài chính</h2>
+
+            <ol style="margin-left: 18px; font-size: 14px;">
+                <li>
+                    <strong>Khai thác &amp; đầu tư kim loại quý</strong>
+                    <ul>
+                        <li>Thăm dò, đầu tư và hợp tác khai thác các mỏ vàng tiềm năng.</li>
+                        <li>Liên doanh vận hành các dự án mỏ tại Việt Nam và khu vực.</li>
+                        <li>Hình thành hệ thống dự trữ chiến lược kim loại quý.</li>
+                    </ul>
+                </li>
+                <li style="margin-top: 8px;">
+                    <strong>Tinh luyện kim loại quý độ tinh khiết cao (công nghệ Nhật Bản)</strong>
+                    <ul>
+                        <li>Ứng dụng công nghệ tinh luyện siêu tinh khiết 99,999% từ Nhật Bản.</li>
+                        <li>Cung cấp nguyên liệu kim loại quý cho điện tử, chip, ô tô và các ngành công nghiệp công nghệ cao.</li>
+                        <li>Nâng tầm năng lực tinh luyện kim loại quý của Việt Nam lên chuẩn quốc tế.</li>
+                    </ul>
+                </li>
+                <li style="margin-top: 8px;">
+                    <strong>Thương hiệu vàng cao cấp SJC × JP</strong>
+                    <ul>
+                        <li>Phát triển dòng sản phẩm thỏi vàng đầu tư “SJC·JP”.</li>
+                        <li>Phân phối tại Việt Nam, Nhật Bản và toàn bộ thị trường ASEAN.</li>
+                        <li>Áp dụng hệ thống chứng nhận kép: tiêu chuẩn Việt Nam kết hợp công nghệ Nhật Bản.</li>
+                    </ul>
+                </li>
+                <li style="margin-top: 8px;">
+                    <strong>Giao dịch &amp; dịch vụ tài chính kim loại quý ASEAN</strong>
+                    <ul>
+                        <li>Dịch vụ tài sản kim loại quý: lưu ký, quản lý và tối ưu danh mục vàng.</li>
+                        <li>Giải pháp đầu tư, tích luỹ và mua vàng theo kế hoạch cho nhà đầu tư cá nhân &amp; tổ chức.</li>
+                        <li>Kết nối trực tiếp với hệ thống giám sát của Ngân hàng Nhà nước Việt Nam, đảm bảo minh bạch &amp; an toàn.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- V. Ý nghĩa thành lập -->
+        <section class="section">
+            <div class="section-tag">IV. Ý NGHĨA THÀNH LẬP – NÂNG TẦM VỊ THẾ VIỆT NAM</div>
+            <h2 class="section-title">Bước tiến chiến lược của Việt Nam trên bản đồ kim loại quý quốc tế</h2>
+
+            <ul>
+                <li>Đây là lần đầu tiên Việt Nam hợp tác sâu rộng với một tập đoàn kim loại quý trăm năm tuổi của Nhật Bản.</li>
+                <li>Nâng cao toàn diện trình độ tinh luyện, chế tác và đầu tư kim loại quý của Việt Nam.</li>
+                <li>Củng cố vị thế của Việt Nam trên thị trường vàng &amp; kim loại quý tài chính trong khu vực ASEAN.</li>
+                <li>Đưa Việt Nam trở thành một mắt xích quan trọng trong chuỗi cung ứng kim loại quý châu Á.</li>
+                <li>Góp phần xây dựng một thị trường kim loại quý Việt Nam ổn định, minh bạch và hội nhập sâu rộng với quốc tế.</li>
+            </ul>
+        </section>
+
+        <p class="footer">
+            © SJC·JP International Precious Metals Investment Co., Ltd. – Trung tâm đầu tư kim loại quý hướng tới tương lai ASEAN.
         </p>
-    </div>
-
-    <!-- 业务板块 -->
-    <div class="section">
-        <div class="section-title">LĨNH VỰC KINH DOANH CHÍNH</div>
-
-        <h3>1. Khai thác và đầu tư kim loại quý</h3>
-        <ul>
-            <li>Thăm dò, đầu tư và hợp tác phát triển các mỏ vàng tiềm năng.</li>
-            <li>Liên doanh khai thác các dự án mỏ tại Việt Nam.</li>
-            <li>Xây dựng hệ thống dự trữ chiến lược kim loại quý.</li>
-        </ul>
-
-        <h3>2. Tinh luyện kim loại quý độ tinh khiết cao (công nghệ Nhật Bản)</h3>
-        <ul>
-            <li>Ứng dụng công nghệ tinh luyện siêu tinh khiết 99,999% từ Nhật Bản.</li>
-            <li>Cung cấp nguyên liệu kim loại quý cho điện tử, chip, ô tô và các ngành công nghiệp.</li>
-            <li>Nâng tầm năng lực tinh luyện kim loại quý của Việt Nam lên chuẩn quốc tế.</li>
-        </ul>
-
-        <h3>3. Thương hiệu vàng thỏi cao cấp SJC × JP</h3>
-        <ul>
-            <li>Phát triển dòng vàng đầu tư “SJC·JP” dành cho thị trường trong nước và khu vực.</li>
-            <li>Hệ thống kiểm định kép: tiêu chuẩn Việt Nam + công nghệ Nhật Bản.</li>
-            <li>Xây dựng thương hiệu vàng đầu tư an toàn, minh bạch, chuẩn quốc tế.</li>
-        </ul>
-    </div>
-</div>
+    </main>
 </body>
 </html>
